@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #F7F7F5; }
+  ::-webkit-scrollbar-thumb { background: #6BB59A; border-radius: 99px; }
+}
+
+@layer components {
+  .font-display { font-family: 'Cormorant Garamond', serif; }
+
+  .section-label {
+    @apply text-xs font-semibold tracking-widest uppercase text-orange;
+  }
+  .section-title {
+    @apply font-display text-4xl md:text-5xl font-light leading-tight text-gray-900;
+  }
+  .section-sub {
+    @apply text-base text-gray-500 leading-relaxed max-w-xl mt-4;
+  }
+
+  .btn-primary {
+    @apply bg-orange text-white px-8 py-3.5 rounded-full font-medium text-sm
+           transition-all duration-300 hover:bg-teal hover:-translate-y-0.5
+           shadow-lg shadow-orange/30 hover:shadow-teal/30 inline-block;
+  }
+  .btn-outline {
+    @apply border border-teal text-teal-dark px-8 py-3.5 rounded-full font-medium text-sm
+           transition-all duration-300 hover:bg-teal hover:text-white hover:-translate-y-0.5 inline-block;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-teal/10;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-600 { animation-delay: 0.6s; }
+  .animation-delay-800 { animation-delay: 0.8s; }
+  .opacity-0-start { opacity: 0; }
+}
+
+/* Animated gradient bar on service cards */
+.service-card-bar {
+  height: 3px;
+  background: linear-gradient(90deg, #408A71, #F77F00);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.group:hover .service-card-bar { transform: scaleX(1); }
+
+/* Eye SVG animation */
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+.eye-blink { animation: blink 4s ease-in-out infinite; transform-origin: center; }
+
+/* Subtle background mesh */
+.mesh-bg {
+  background-image:
+    radial-gradient(at 40% 20%, rgba(64,138,113,0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(247,127,0,0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(64,138,113,0.05) 0px, transparent 50%);
+}
+
+/* FAQ transition */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.3s ease;
+}
+.faq-answer.open { max-height: 200px; padding-bottom: 1rem; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
