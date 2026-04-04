@@ -18,12 +18,30 @@ export default function Appointment() {
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 4000)
-    setForm({ name: '', phone: '', email: '', service: '', date: '', message: '' })
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbyHDYXW41wKW0kic_hD3iWquJcViJyHPaRI9_KGqaZdVMPGutNFXjG0htB5XdvkOVuG/exec", {
+      method: "POST",
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (data.status === "success") {
+      setSubmitted(true);
+      setForm({ name: '', phone: '', email: '', service: '', date: '', message: '' });
+
+      setTimeout(() => setSubmitted(false), 4000);
+    } else {
+      alert("Something went wrong!");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Error sending form");
   }
+};
 
   useEffect(() => {
     const observer = new IntersectionObserver(
