@@ -19,40 +19,37 @@ export default function Appointment() {
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbyHDYXW41wKW0kic_hD3iWquJcViJyHPaRI9_KGqaZdVMPGutNFXjG0htB5XdvkOVuG/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json", // 🔥 THIS IS THE FIX
-        },
-        body: JSON.stringify(form),
-      });
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbw6sFNcmjxEehL-6PXRtpGDsdmJqPPsGE2mfPKN6nscJjfDXCVj4enJw-4R-6X1e2M/exec", {
+      method: "POST",
+      mode: "no-cors", // 🔥 FIX FOR CORS
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
 
-      const data = await res.json();
-      console.log("Response:", data); // 🔍 debug
+    // ⚠️ No response available in no-cors mode
+    setSubmitted(true);
 
-      if (data.status === "success") {
-        setSubmitted(true);
-        setForm({
-          name: '',
-          phone: '',
-          email: '',
-          service: '',
-          date: '',
-          message: ''
-        });
+    setForm({
+      name: '',
+      phone: '',
+      email: '',
+      service: '',
+      date: '',
+      message: ''
+    });
 
-        setTimeout(() => setSubmitted(false), 4000);
-      } else {
-        alert("Error: " + data.message);
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Error sending form");
-    }
-  };
+    setTimeout(() => setSubmitted(false), 4000);
+
+  } catch (err) {
+    console.error(err);
+    alert("Error sending form");
+  }
+};
 
   useEffect(() => {
     const observer = new IntersectionObserver(
