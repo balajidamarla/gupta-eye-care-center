@@ -1,6 +1,13 @@
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
-import { FaHome, FaInfoCircle, FaUserMd, FaCommentDots, FaQuestionCircle, FaCalendarCheck } from "react-icons/fa";
-
+import {
+  FaHome,
+  FaInfoCircle,
+  FaUserMd,
+  FaUsers,
+  FaImages,
+  FaQuestionCircle,
+  FaCalendarCheck
+} from "react-icons/fa";
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -54,9 +61,31 @@ export default function Footer() {
           <div>
             <p className="text-[11px] font-semibold tracking-widest uppercase text-gray-500 mb-4">Services</p>
             <ul className="space-y-2.5">
-              {['LASIK / Laser Surgery', 'Cataract Surgery', 'Glaucoma Treatment', 'Retina Care', 'ICL Surgery', 'Oculoplasty', 'Pediatric Eye Care'].map(s => (
+              {[
+                'Comprehensive Eye Checkup',
+                'Phaco Cataract Surgery',
+                'MICS - Micro Incision Cataract Surgery',
+                'Refractive Surgery (LASIK / ICL / Trans-PRK)',
+                'Retina Surgery',
+                'Diabetic Retinopathy Management',
+                'Secondary IOL Surgery',
+                'Squint Surgery',
+                'Pediatric Ophthalmology',
+                'Neuro Ophthalmology',
+                'Oculoplasty',
+                'Pterygium Excision with Conjunctival Autograft',
+                'Glaucoma Surgery',
+                'Myopia Clinic',
+                'Contact Lens Services',
+                'Pharmacy'
+              ].map((s) => (
                 <li key={s}>
-                  <a href="#services" className="text-[13px] text-gray-400 hover:text-tealCustom transition-colors no-underline">{s}</a>
+                  <a
+                    href="/services"
+                    className="text-[13px] text-gray-400 hover:text-tealCustom transition-colors no-underline"
+                  >
+                    {s}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -70,12 +99,13 @@ export default function Footer() {
 
             <ul className="space-y-2.5">
               {[
-                { label: 'Home', href: '#', icon: <FaHome /> },
-                { label: 'About Us', href: '#stats', icon: <FaInfoCircle /> },
-                { label: 'Meet Doctors', href: '#doctors', icon: <FaUserMd /> },
-                { label: 'Testimonials', href: '#testimonials', icon: <FaCommentDots /> },
-                { label: 'FAQ', href: '#faq', icon: <FaQuestionCircle /> },
-                { label: 'Book Appointment', href: '#appointment', icon: <FaCalendarCheck /> },
+                { label: 'Home', href: '/', icon: <FaHome /> },
+                { label: 'About Us', href: '/aboutus', icon: <FaInfoCircle /> },
+                { label: 'Services', href: '/services', icon: <FaUserMd /> },
+                { label: 'Meet Doctors', href: '/ourteam', icon: <FaUsers /> },
+                { label: 'Gallery', href: '/gallery', icon: <FaImages /> },
+                // { label: 'FAQ', href: '#faq', icon: <FaQuestionCircle /> },
+                { label: 'Book Appointment', href: '/appointment', icon: <FaCalendarCheck /> },
               ].map((l) => (
                 <li key={l.label}>
                   <a
