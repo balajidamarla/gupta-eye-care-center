@@ -11,7 +11,7 @@ import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Appointment from './components/Appointment'
 import AboutUs from './components/AboutUs'
-import ServicesPage from "./components/ServicesPage"
+import ServicesPage from "./components/Servicespage"
 import Gallery from "./components/Gallerypage"
 import Blogs from "./components/Blogspage"
 import AppointmentPage from "./components/Appointmentpage"
