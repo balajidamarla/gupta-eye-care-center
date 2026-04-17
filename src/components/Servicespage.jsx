@@ -546,7 +546,7 @@ export default function ServicesPage() {
                                     <div className="absolute inset-0 bg-gradient-to-tr from-tealCustom/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
 
                                     <img
-                                        src="public/assets/gupta eye care services.png"
+                                        src="/assets/gupta eye care services.png"
                                         alt="Advanced Eye Care Technology"
                                         className="w-full h-auto object-cover transform transition-transform duration-[2s] group-hover:scale-110"
                                     />
