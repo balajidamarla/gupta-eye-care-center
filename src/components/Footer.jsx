@@ -21,7 +21,7 @@ export default function Footer() {
               </div> */}
               <a href="#" className="flex items-center gap-3 no-underline group">
                 <img
-                  src="public/assets/gupta eye care logo.png"
+                  src="/assets/gupta eye care logo.png"
                   alt="Gupta Eye Care Center"
                   className="h-20 w-auto object-contain"
                 />
