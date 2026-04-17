@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react'
 
 const NAV_LINKS = [
-  { label: 'Services', href: '#services' },
-  { label: 'Doctors', href: '#doctors' },
-  { label: 'About', href: '#stats' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/aboutus' },
+  { label: 'Services', href: '/services' },
+  // { label: 'Services', href: '#services' },
+  { label: 'Our Team', href: '/ourteam' },
+  // { label: 'About', href: '#stats' },
+  // { label: 'Testimonials', href: '#testimonials' },
+  // { label: 'FAQ', href: '#faq' },
+  { label: 'Gallery', href: '/Gallery' },
+  { label: 'Blogs', href: '/Blogs' },
 ]
 
 export default function Navbar() {
@@ -19,24 +24,17 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm shadow-teal/10' : 'bg-white/80 backdrop-blur-sm'
-    } border-b border-teal/10`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-[70px] flex items-center justify-between">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm shadow-teal/10' : 'bg-white/80 backdrop-blur-sm'
+      } border-b border-teal/10`}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-[100px] flex items-center justify-between">
 
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 no-underline group">
-          {/* <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-teal to-teal-dark flex items-center justify-center shadow-md shadow-teal/30 group-hover:shadow-teal/50 transition-shadow">
-            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
-              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 12.5a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z"/>
-            </svg>
-          </div> */}
-          <div className="leading-none">
-            <span className="font-display text-2xl font-semibold text-teal-dark block leading-none">
-              Gupta <span className="text-orange">Eye Care Center</span>
-            </span>
-            {/* <span className="text-[10px] tracking-widest uppercase text-gray-400 font-body">Center · Hyderabad</span> */}
-          </div>
+        <a href="/" className="flex items-center gap-3 no-underline group">
+          <img
+            src="/assets/gupta eye care logo.png"
+            alt="Gupta Eye Care Center"
+            className="h-20 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop links */}
@@ -45,7 +43,7 @@ export default function Navbar() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-gray-500 hover:text-teal transition-colors duration-200 no-underline tracking-wide"
+                className="text-sm font-medium text-gray-500 hover:text-tealCustom transition-colors duration-200 no-underline tracking-wide"
               >
                 {link.label}
               </a>
@@ -55,7 +53,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="#appointment"
+          href="/appointment"
           className="hidden md:inline-block btn-primary text-sm"
         >
           Book Appointment

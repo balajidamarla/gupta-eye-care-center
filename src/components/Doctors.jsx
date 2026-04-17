@@ -4,34 +4,34 @@ const DOCTORS = [
   {
     initials: 'RG',
     name: 'Dr. Rajander Gupta',
-    specialty: 'Cataract Surgeon',
+    specialty: 'Medical Director & Chief Consultant',
     exp: '35+ years experience',
-    qualifications: 'MS Ophthalmology, FRCS (UK)',
-    gradient: 'from-teal-dark to-teal',
+    qualifications: 'MBBS, MS (Ophthalmology), Retd. Superintendent, Sarojini Devi Eye Hospital, Retd. Professor, Osmania Medical College',
+    gradient: 'from-tealCustom to-teal',
   },
   {
-    initials: 'PG',
-    name: 'Dr. Sarang Gupta',
-    specialty: 'Retina Specialist',
+    initials: 'SG',
+    name: 'Dr. Sarang Rajendra Gupta',
+    specialty: 'Vitreoretina and Posterior Segment Surgeon',
+    exp: '10+ years experience',
+    qualifications: 'MBBS, DNB, FLVPEI (L.V. Prasad Eye Institute)',
+    gradient: 'from-orangeCustom to-orange-light',
+  },
+  {
+    initials: 'SR',
+    name: 'Dr. A. Siddhartha Reddy',
+    specialty: 'Phaco & ICL Surgeon',
     exp: '15+ years experience',
-    qualifications: 'MS Ophthalmology, Fellowship Retina',
-    gradient: 'from-teal to-teal-light',
+    qualifications: 'MBBS, MS (Ophthalmology)',
+    gradient: 'from-orangeCustom to-orange-light',
   },
   {
-    initials: 'AK',
-    name: 'Dr. Anisha Nirathya',
-    specialty: 'Pediatric Ophthalmology',
-    exp: '12+ years experience',
-    qualifications: 'DNB Ophthalmology, Pediatric Fellowship',
-    gradient: 'from-orange to-orange-light',
-  },
-  {
-    initials: 'SM',
-    name: 'Dr. Harsha K',
-    specialty: 'Oculoplasty',
-    exp: '14+ years experience',
-    qualifications: 'MS Ophthalmology, Glaucoma Fellowship',
-    gradient: 'from-teal-dark to-teal',
+    initials: 'NA',
+    name: 'Dr. Nirathya Anisha. P',
+    specialty: 'Pediatric, Strabismus & Neuro-Ophthalmologist',
+    exp: '8+ years experience',
+    qualifications: 'MBBS, MS (Ophthalmology), FLVPEI (L.V. Prasad Eye Institute)',
+    gradient: 'from-tealCustom to-teal',
   },
 ]
 
@@ -48,16 +48,16 @@ export default function Doctors() {
   }, [])
 
   return (
-    <section id="doctors" ref={sectionRef} className="py-24 bg-white">
+    <section id="doctors" ref={sectionRef} className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         <div className="reveal text-center mb-14">
           <p className="section-label mb-3">Our Team</p>
           <h2 className="section-title">
-            Meet Our <em className="italic text-teal">Expert</em> Doctors
+            Meet Our <em className="italic text-tealCustom">Expert</em> Doctors
           </h2>
-          <p className="section-sub mx-auto text-center">
-            Our fellowship-trained specialists bring decades of combined experience and a genuine passion for restoring vision.
+          <p className="section-sub mx-auto text-center text-xs sm:text-base md:text-lg">
+            Our trained specialists bring decades of combined experience and a genuine passion for restoring vision.
           </p>
         </div>
 
@@ -81,19 +81,27 @@ export default function Doctors() {
               {/* Info */}
               <div className="p-5">
                 <h3 className="font-display text-xl font-semibold text-gray-900 leading-tight">{doc.name}</h3>
-                <p className="text-[11px] font-semibold tracking-widest uppercase text-orange mt-1">{doc.specialty}</p>
+                <p className="text-[11px] font-semibold tracking-widest uppercase text-orangeCustom mt-1">{doc.specialty}</p>
                 <p className="text-xs text-gray-400 mt-3">{doc.qualifications}</p>
                 <div className="flex items-center gap-1.5 mt-3">
                   <svg className="w-3.5 h-3.5 text-teal fill-current" viewBox="0 0 16 16">
                     <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 10.5h-1.5v-5h1.5v5zm0-6.5h-1.5V3.5h1.5V5z"/>
                   </svg>
-                  <span className="text-[12px] text-teal font-medium">{doc.exp}</span>
+                  <span className="text-[12px] text-tealCustom font-medium">{doc.exp}</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+      <div className="flex justify-center mt-10">
+          <a
+            href="/ourteam"
+            className="bg-tealCustom text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Explore Doctors
+          </a>
+        </div>
     </section>
   )
 }

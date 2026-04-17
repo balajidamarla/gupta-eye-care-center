@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-[70px] overflow-hidden mesh-bg bg-gradient-to-br from-white via-teal-pale/30 to-orange-pale/40">
+    <section className="relative min-h-screen flex items-center pt-[50px] overflow-hidden mesh-bg bg-gradient-to-br from-white via-teal-pale/30 to-orange-pale/40">
 
       {/* Background decorative circles */}
       <div className="absolute top-[-180px] right-[-120px] w-[520px] h-[520px] rounded-full bg-teal/10 blur-3xl pointer-events-none" />
@@ -27,13 +27,13 @@ export default function Hero() {
             style={{ animationDelay: '0.25s', animationFillMode: 'forwards' }}
           >
             Clarity is a <br />
-            <em className="text-teal not-italic">Gift We</em>{' '}
-            <span className="text-orange">Give You</span>
+            <em className="text-tealCustom not-italic">Gift We</em>{' '}
+            <span className="text-orangeCustom">Give You</span>
           </h1>
 
           {/* Sub */}
           <p
-            className="text-[16px] text-gray-500 leading-relaxed max-w-[460px] mb-10
+            className="text-xs sm:text-base md:text-[16px] text-gray-500 leading-relaxed max-w-[460px] mb-10
                        animate-fade-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
@@ -46,7 +46,7 @@ export default function Hero() {
             style={{ animationDelay: '0.55s', animationFillMode: 'forwards' }}
           >
             <a href="#appointment" className="btn-primary">Book Appointment</a>
-            <a href="#services" className="btn-outline">Explore Services</a>
+            <a href="/services" className="btn-outline">Explore Services</a>
           </div>
 
           {/* Trust chips */}
@@ -54,9 +54,9 @@ export default function Hero() {
             className="flex flex-wrap gap-3 mt-10 animate-fade-up opacity-0"
             style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}
           >
-            {['LASIK Certified', 'ISO Accredited', '15+ Years Experience', 'State-of-the-Art Equipment'].map(chip => (
+            {['LASIK Certified', 'ISO Accredited', '7+ Years Experience', 'State-of-the-Art Equipment'].map(chip => (
               <span key={chip} className="flex items-center gap-1.5 text-xs text-gray-500 bg-white border border-gray-100 px-3 py-1.5 rounded-full shadow-sm">
-                <svg className="w-3 h-3 text-teal fill-current" viewBox="0 0 12 12">
+                <svg className="w-3 h-3 text-tealCustom fill-current" viewBox="0 0 12 12">
                   <path d="M10 3L5 8.5 2 5.5l-1 1L5 10.5l6-7-1-0.5z"/>
                 </svg>
                 {chip}
@@ -102,24 +102,24 @@ export default function Hero() {
                   </g>
                 </svg>
                 {/* Floating label */}
-                <div className="absolute -top-3 -right-6 bg-orange text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-md shadow-orange/30 animate-float" style={{ animationDelay: '1s' }}>
+                <div className="absolute -top-3 -right-6 bg-orangeCustom text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-md shadow-orange/30 animate-float" style={{ animationDelay: '1s' }}>
                   20/20 Vision
                 </div>
               </div>
             </div>
 
             {/* Stats row */}
-            <div className="grid grid-cols-3 divide-x divide-teal/10 border-t border-teal/10 pt-6">
+            <div className="grid grid-cols-3 divide-x divide-teal/10 border-t border-teal/10 pt-4 sm:pt-6">
               {[
-                { num: '35+', label: 'Years' },
-                { num: '200K+', label: 'Patients' },
-                { num: '10', label: 'Specialties' },
+                { num: '7+', label: 'Years' },
+                { num: '300K+', label: 'Patients' },
+                { num: '6', label: 'Specialties' },
               ].map(s => (
-                <div key={s.label} className="text-center px-2">
-                  <p className="font-number text-3xl font-semibold text-teal-dark leading-none">
+                <div key={s.label} className="text-center px-1 sm:px-2">
+                  <p className="font-number text-xl sm:text-2xl md:text-3xl font-semibold text-tealCustom leading-none">
                     {s.num}
                   </p>
-                  <p className="text-[11px] uppercase tracking-widest text-gray-400 mt-1 font-medium">{s.label}</p>
+                  <p className="text-[9px] sm:text-[11px] uppercase tracking-widest text-gray-400 mt-1 font-medium">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -128,11 +128,11 @@ export default function Hero() {
           {/* Floating tag cards */}
           <div className="absolute -left-4 top-1/4 bg-white rounded-2xl shadow-lg shadow-teal/10 border border-teal/10 px-4 py-3 animate-float" style={{ animationDelay: '0.5s' }}>
             <p className="text-xs text-gray-400 font-medium">Latest Tech</p>
-            <p className="text-sm font-semibold text-teal-dark font-display">Femto LASIK</p>
+            <p className="text-sm font-semibold text-tealCustom font-display">Femto LASIK</p>
           </div>
           <div className="absolute -right-4 bottom-1/3 bg-white rounded-2xl shadow-lg shadow-orange/10 border border-orange/10 px-4 py-3 animate-float" style={{ animationDelay: '1.5s' }}>
             <p className="text-xs text-gray-400 font-medium">Success Rate</p>
-            <p className="text-sm font-semibold text-orange font-number">99%</p>
+            <p className="text-sm font-semibold text-orangeCustom font-number">99%</p>
           </div>
         </div>
       </div>

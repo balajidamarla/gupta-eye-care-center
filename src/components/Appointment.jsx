@@ -24,14 +24,14 @@ export default function Appointment() {
   try {
     await fetch("https://script.google.com/macros/s/AKfycbw6sFNcmjxEehL-6PXRtpGDsdmJqPPsGE2mfPKN6nscJjfDXCVj4enJw-4R-6X1e2M/exec", {
       method: "POST",
-      mode: "no-cors", // 🔥 FIX FOR CORS
+      mode: "no-cors", //FIX FOR CORS
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(form),
     });
 
-    // ⚠️ No response available in no-cors mode
+    //No response available in no-cors mode
     setSubmitted(true);
 
     setForm({
@@ -60,11 +60,11 @@ export default function Appointment() {
     return () => observer.disconnect()
   }, [])
 
-  const inputCls = `w-full bg-teal/20 border border-white/15 rounded-xl px-4 py-3 text-white text-sm
-    placeholder:text-white/30 focus:outline-none focus:border-orange focus:bg-white/12 transition-all duration-200`
+  const inputCls = `w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-white text-sm
+    placeholder:text-white/40 focus:outline-none focus:border-orangeCustom focus:bg-white/12 transition-all duration-200`
 
   return (
-    <section id="appointment" ref={sectionRef} className="py-24 bg-teal-dark relative overflow-hidden">
+    <section id="appointment" ref={sectionRef} className="py-10  bg-tealCustom relative overflow-hidden">
       {/* BG decor */}
       <div className="absolute top-[-200px] right-[-150px] w-[500px] h-[500px] rounded-full bg-teal/30 blur-3xl pointer-events-none" />
       <div className="absolute bottom-[-100px] left-[-80px] w-[350px] h-[350px] rounded-full bg-orange/10 blur-3xl pointer-events-none" />
@@ -74,10 +74,10 @@ export default function Appointment() {
 
           {/* Left: Info */}
           <div className="reveal">
-            <p className="text-[11px] font-semibold tracking-widest uppercase text-orange-light mb-3">Contact Us</p>
+            <p className="text-[11px] font-semibold tracking-widest uppercase text-black mb-3">Contact Us</p>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white leading-tight mb-4">
               Book Your <br />
-              <em className="italic text-orange-light">Appointment</em> Today
+              <em className="italic text-black">Appointment</em> Today
             </h2>
             <p className="text-white/60 text-base leading-relaxed mb-12 max-w-md">
               Take the first step toward clearer vision. Our team is ready to guide you through the best treatment option for your needs.
@@ -102,7 +102,7 @@ export default function Appointment() {
                     </svg>
                   ),
                   label: 'Phone',
-                  value: '06300809448',
+                  value: '6300809448', 
                   href: 'tel:06300809448',
                 },
                 {
@@ -112,8 +112,8 @@ export default function Appointment() {
                     </svg>
                   ),
                   label: 'Email',
-                  value: 'gupthaeyecarecenter@gmail.com',
-                  href: 'mailto:gupthaeyecarecenter@gmail.com',
+                  value: 'guptaecc@gmail.com',
+                  href: 'mailto:guptaecc@gmail.com',
                 },
               ].map(item => (
                 <div key={item.label} className="flex items-start gap-4">
@@ -140,8 +140,7 @@ export default function Appointment() {
               <div className="space-y-2.5 text-sm">
                 {[
                   { days: 'Monday – Saturday', time: '10:00 AM – 7:00 PM' },
-                  // { days: 'Sunday', time: '10:00 AM – 2:00 PM' },
-                  // { days: 'Emergency', time: '24 × 7 Available' },
+
                 ].map(row => (
                   <div key={row.days} className="flex justify-between">
                     <span className="text-white/60">{row.days}</span>
@@ -154,11 +153,11 @@ export default function Appointment() {
 
           {/* Right: Form */}
           <div className="reveal" style={{ transitionDelay: '150ms' }}>
-            <div className="bg-white/5 border border-teal/100 rounded-3xl p-8">
+            <div className="bg-white/10 border border-white/10 rounded-3xl p-8">
               <h3 className="font-display text-2xl text-white font-semibold mb-6">Request an Appointment</h3>
 
               {submitted && (
-                <div className="bg-teal/30 border border-teal-light/40 rounded-xl p-4 mb-6 text-teal-pale text-sm font-medium flex items-center gap-2">
+                <div className="bg-teal/30 border border-teal-light/40 rounded-xl p-4 mb-6 text-white text-sm font-medium flex items-center gap-2">
                   <svg className="w-5 h-5 fill-current flex-shrink-0" viewBox="0 0 20 20">
                     <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
                   </svg>
@@ -187,22 +186,22 @@ export default function Appointment() {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-semibold tracking-widest uppercase text-white/50 mb-2">Email</label>
+                  <label className="block text-[11px] font-semibold tracking-widest uppercase text-white/50 mb-2">Email *</label>
                   <input
                     name="email" value={form.email} onChange={handleChange}
-                    placeholder="your@email.com" type="email"
+                    required placeholder="your@email.com" type="email"
                     className={inputCls}
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[11px] font-semibold tracking-widest uppercase text-white/50 mb-2">Service</label>
-                    <select name="service" value={form.service} onChange={handleChange} className={inputCls + ' cursor-pointer'}>
-                      <option value="" className="bg-teal-dark">Select service</option>
+                    <label className="block text-[11px] font-semibold tracking-widest uppercase text-white/50 mb-2">Service *</label>
+                    <select name="service" value={form.service} onChange={handleChange} required className={inputCls + ' cursor-pointer'}>
+                      <option value="" className="bg-teal-dark">Select service </option>
                       {SERVICES_LIST.map(s => (
                         <option key={s} value={s} className="bg-teal-dark">{s}</option>
-                      ))}
+                      ))} 
                     </select>
                   </div>
                   <div>
@@ -226,7 +225,7 @@ export default function Appointment() {
 
                 <button
                   type="submit"
-                  className="w-full bg-orange hover:bg-orange-light text-white font-semibold py-4 rounded-xl text-sm transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-orange/30 mt-2"
+                  className="w-full bg-orangeCustom hover:bg-orange-light text-white font-semibold py-4 rounded-xl text-sm transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-orange/30 mt-2"
                 >
                   Book My Appointment →
                 </button>

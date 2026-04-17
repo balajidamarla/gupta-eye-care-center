@@ -8,18 +8,22 @@ export default {
           DEFAULT: '#F77F00',
           light: '#FFB347',
           pale: '#FFF5E6',
+          
         },
         teal: {
           DEFAULT: '#408A71',
           light: '#6BB59A',
           dark: '#2D6354',
           pale: '#EAF5F0',
+          
         },
+        tealCustom: '#008f96',
+        orangeCustom: '#f6871f',
       },
       fontFamily: {
         display: ['" GaramonCormorantd"', 'serif'],
         body: ['"DM Sans"', 'sans-serif'],
-        number: ['"Nunito Sans"', 'sans-serif'], 
+        number: ['"Arial"', 'sans-serif'], 
       },
       animation: {
         'fade-up': 'fadeUp 0.7s ease forwards',
@@ -47,5 +51,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

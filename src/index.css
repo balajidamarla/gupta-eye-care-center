@@ -9,14 +9,14 @@
   body { font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: #F7F7F5; }
-  ::-webkit-scrollbar-thumb { background: #6BB59A; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb { background: #008f96; border-radius: 99px; }
 }
 
 @layer components {
   .font-display { font-family: 'Cormorant Garamond', serif; }
 
   .section-label {
-    @apply text-xs font-semibold tracking-widest uppercase text-orange;
+    @apply text-xs font-semibold tracking-widest uppercase text-orangeCustom;
   }
   .section-title {
     @apply font-display text-4xl md:text-5xl font-light leading-tight text-gray-900;
@@ -26,13 +26,13 @@
   }
 
   .btn-primary {
-    @apply bg-orange text-white px-8 py-3.5 rounded-full font-medium text-sm
-           transition-all duration-300 hover:bg-teal hover:-translate-y-0.5
+    @apply bg-orangeCustom text-white px-8 py-3.5 rounded-full font-medium text-sm
+           transition-all duration-300 hover:bg-tealCustom hover:-translate-y-0.5
            shadow-lg shadow-orange/30 hover:shadow-teal/30 inline-block;
   }
   .btn-outline {
-    @apply border border-teal text-teal-dark px-8 py-3.5 rounded-full font-medium text-sm
-           transition-all duration-300 hover:bg-teal hover:text-white hover:-translate-y-0.5 inline-block;
+    @apply border border-tealCustom text-tealCustom px-8 py-3.5 rounded-full font-medium text-sm
+           transition-all duration-300 hover:bg-tealCustom hover:text-white hover:-translate-y-0.5 inline-block;
   }
 
   .card-hover {
@@ -51,7 +51,7 @@
 /* Animated gradient bar on service cards */
 .service-card-bar {
   height: 3px;
-  background: linear-gradient(90deg, #408A71, #F77F00);
+  background: linear-gradient(90deg, #008f96);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -88,3 +88,16 @@
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+}

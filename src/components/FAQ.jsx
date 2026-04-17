@@ -31,7 +31,7 @@ const FAQS = [
   },
   {
     q: 'How do I book an appointment?',
-    a: 'You can book via the form on this page, call us at 06300809448, or email gupthaeyecarecenter@gmail.com. We also offer emergency consultations for urgent eye conditions. Our team will confirm your slot within a few hours.',
+    a: 'You can book via the form on this page, call us at 6300809448, or email guptaecc@gmail.com. We also offer emergency consultations for urgent eye conditions. Our team will confirm your slot within a few hours.',
   },
 ]
 
@@ -46,11 +46,11 @@ function FAQItem({ q, a, delay }) {
         className="w-full flex items-center justify-between py-5 text-left gap-4 group"
         onClick={() => setOpen(!open)}
       >
-        <span className={`text-[15px] font-medium transition-colors duration-200 ${open ? 'text-teal' : 'text-gray-800 group-hover:text-teal'}`}>
+        <span className={`text-[15px] font-medium transition-colors duration-200 ${open ? 'text-tealCustom' : 'text-gray-800 group-hover:text-tealCustom'}`}>
           {q}
         </span>
         <span className={`w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center text-sm
-          transition-all duration-300 ${open ? 'bg-teal text-white rotate-45' : 'bg-teal-pale text-teal'}`}>
+          transition-all duration-300 ${open ? 'bg-tealCustom text-white rotate-45' : 'bg-teal-pale text-tealCustom'}`}>
           +
         </span>
       </button>
@@ -76,15 +76,15 @@ export default function FAQ() {
   const half = Math.ceil(FAQS.length / 2)
 
   return (
-    <section id="faq" ref={sectionRef} className="py-24 bg-[#F7F7F5]">
+    <section id="faq" ref={sectionRef} className="py-10 bg-[#F7F7F5]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         <div className="reveal text-center mb-14">
           <p className="section-label mb-3">FAQ</p>
           <h2 className="section-title">
-            Questions We <em className="italic text-teal">Hear Often</em>
+            Questions We <em className="italic text-tealCustom">Hear Often</em>
           </h2>
-          <p className="section-sub mx-auto text-center">
+          <p className="section-sub mx-auto text-center text-xs sm:text-base md:text-lg">
             Everything you need to know before your visit. Can't find your answer? Call us directly.
           </p>
         </div>
